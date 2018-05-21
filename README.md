@@ -55,11 +55,11 @@ Since Docker UCP doesn't currently support Kubernetes RBAC, to ensure the `hystr
     * Under `Subjects`
       * Select `Service Account` Subject Type
       * Select `hystrix-dashboard` Namespace
-      * Select `hystrix-dashboard` Service Account
+      * Select `hystrix-dashboard-sa` Service Account
 3. Click the `Create` button on the bottom right of the page
 
 
-To access the interface, check the url and node port that was assigned to the `hystrix-dashboard-svc` in UCP. Alternatively, if you've deployed the [Nginx Ingress Controller](https://docs.docker.com/ee/ucp/kubernetes/layer-7-routing/), you can modify the `ucp/ingress.yaml` file to add your desired hostname (e.g., `hystrix-dashboard.apps.example.com`) and apply it to your cluster:
+To access the interface, check the url and node port that was assigned to the `hystrix-dashboard-svc` in UCP. Alternatively, if you've deployed the [Nginx Ingress Controller](https://docs.docker.com/ee/ucp/kubernetes/layer-7-routing/), you can modify the [ucp/ingress.yaml file](ucp/ingress.yaml) to add your desired hostname (e.g., `hystrix-dashboard.apps.example.com`) and apply it to your cluster:
 
 ```
 $ kubectl apply -f ucp/ingress.yaml
